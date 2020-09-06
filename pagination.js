@@ -6,7 +6,7 @@
     for (var r = start; r <= end; r++) e += postnumber == r ? '<span class="current">' + r + "</span>" : 1 == r ? "page" == type ? '<span class="pagenumber"><a href="' + home_page + '">1</a></span>' : '<span class="pagenumber"><a href="/search/label/' + lblname1 + "?&max-results=" + postperpage + '">1</a></span>' : "page" == type ? '<span class="pagenumber"><a href="#" onclick="redirectpage(' + r + ');return false">' + r + "</a></span>" : '<span class="pagenumber"><a href="#" onclick="redirectlabel(' + r + ');return false">' + r + "</a></span>";
     end < maximum - 1 && (e += ""), end < maximum && (e += "page" == type ? '<span class="pagenumber"><a href="#" onclick="redirectpage(' + maximum + ');return false">' + maximum + "</a></span>" : '<span class="pagenumber"><a href="#" onclick="redirectlabel(' + maximum + ');return false">' + maximum + "</a></span>");
     var n = parseInt(postnumber) + 1;
-    postnumber < maximum && (e += "page" == type ? '<span class="pagenumber"><a href="#" onclick="redirectpage(' + n + ');return false">' + nextpage + "</a></span>" : '<span class="pagenumber"><a href="#" onclick="redirectlabel(' + n + ');return false">' + nextpage + "</a></span>");
+    postnumber < maximum && (e += "page" == type ? '<span class="pagenumber"><a href="#" onclick="redirectpage(' + n + ');return false">&#62;</a></span>' : '<span class="pagenumber"><a href="#" onclick="redirectlabel(' + n + ');return false">&#62;</a></span>');
     for (var t = document.getElementsByName("pageArea"), l = document.getElementById("blog-pager"), p = 0; p < t.length; p++) t[p].innerHTML = e;
     t && t.length > 0 && (e = ""), l && (l.innerHTML = e)
 }
